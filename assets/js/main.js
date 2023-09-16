@@ -5,6 +5,17 @@ const maxRecords = 151
 const limit = 20;
 let offset = 0;
 
+loadMoreButton.addEventListener('mouseover', () =>{
+    loadMoreButton.style.cursor = 'pointer';
+    loadMoreButton.style.transform = "scale(1.15)"
+    
+})
+
+loadMoreButton.addEventListener('mouseout', () =>{
+    loadMoreButton.style.cursor = 'default';
+    loadMoreButton.style.transform = "scale(1)"
+})
+
 function loadPokemonItems(offset, limit){
 
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
